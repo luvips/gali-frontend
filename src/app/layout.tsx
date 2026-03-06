@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/ui/Navbar";
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} antialiased`}>
-        <Navbar />
+        <Suspense fallback={<div style={{ height: 70, background: "#000" }} />}>
+          <Navbar />
+        </Suspense>
         {children}
       </body>
     </html>
