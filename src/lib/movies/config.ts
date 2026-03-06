@@ -1,5 +1,10 @@
-export const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-export const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
+const movieImageBaseUrl = process.env.NEXT_PUBLIC_MOVIE_IMAGE_BASE_URL;
+
+if (!movieImageBaseUrl) {
+  throw new Error("Missing NEXT_PUBLIC_MOVIE_IMAGE_BASE_URL environment variable");
+}
+
+export const MOVIE_IMAGE_BASE_URL = movieImageBaseUrl;
 
 export const POSTER_SIZES = {
   small: "w185",

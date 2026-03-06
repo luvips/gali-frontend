@@ -2,10 +2,12 @@ import {
   getMovieDetails,
   getMovieCredits,
   getSimilarMovies,
+} from "@/lib/api";
+import {
   getPosterUrl,
   getBackdropUrl,
   getProfileUrl,
-} from "@/lib/tmdb";
+} from "@/lib/movies";
 
 const PAGE_SIZE = 14;
 

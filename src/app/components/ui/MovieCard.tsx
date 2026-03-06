@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { type Movie, getPosterUrl } from "@/lib/tmdb";
+import { type Movie, getPosterUrl } from "@/lib/movies";
 
 function ScoreBadge({ score }: { score: number }) {
   const pct = Math.round(score * 10);

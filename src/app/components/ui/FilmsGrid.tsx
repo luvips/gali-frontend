@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GENRE_NAMES } from "@/lib/tmdb";
+import { GENRE_NAMES } from "@/lib/movies";
 import { getHomeGridData, PAGE_SIZE, type HomeTab } from "@/services/home";
 import MovieCard from "./MovieCard";
 import SkeletonCard from "./SkeletonCard";

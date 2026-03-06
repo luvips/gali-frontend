@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getTopRatedMovies } from "@/lib/tmdb";
+import { getTopRatedMovies } from "@/lib/api";
 import { MoviesGrid, MoviesGridSkeleton } from "@/app/components/ui/MoviesGrid";
 
 async function Content() {

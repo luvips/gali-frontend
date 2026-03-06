@@ -2,7 +2,7 @@ import {
   getPopularMovies,
   getTopRatedMovies,
   discoverMovies,
-} from "@/lib/tmdb";
+} from "@/lib/api";
 
 export const PAGE_SIZE = 14;
 const MULTIPAGE_COUNT = 5;

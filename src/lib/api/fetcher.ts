@@ -1,0 +1,27 @@
+import { API_BASE_URL } from "./config";
+
+export async function fetchBackend<T>(path: string, init?: RequestInit): Promise<T> {
+  const url = path.startsWith("http") ? path : `${API_BASE_URL}${path}`;
+  const response = await fetch(url, {
+    ...init,
+    headers: {
+      "Content-Type": "application/json",
+      ...(init?.headers ?? {}),
+    },
+    next: { revalidate: 300 },
+  });
+
+  if (!response.ok) {
+    let detail = "";
+    try {
+      const body = (await response.json()) as { error?: string; detail?: string };
+      detail = body.detail || body.error || "";
+    } catch {
+      detail = "";
+    }
+
+    throw new Error(`API error ${response.status}${detail ? `: ${detail}` : ""}`);
+  }
+
+  return response.json() as Promise<T>;
+}

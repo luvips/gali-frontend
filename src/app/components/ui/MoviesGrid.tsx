@@ -1,6 +1,6 @@
 import MovieCard from "./MovieCard";
 import SkeletonCard from "./SkeletonCard";
-import { type Movie } from "@/lib/tmdb";
+import { type Movie } from "@/lib/movies";
 
 const GRID_CLASS = "grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3";
 
